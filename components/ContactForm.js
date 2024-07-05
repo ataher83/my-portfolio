@@ -1,9 +1,9 @@
-// components/ContactForm.js
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
+  const formRef = useRef();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -13,7 +13,19 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', formData, 'YOUR_USER_ID')
+    // emailjs.sendForm(
+    //   SERVICE_ID,
+    //   TEMPLATE_ID,
+    //   formRef.current,
+    //   PUBLIC_KEY
+    // )
+    
+    emailjs.sendForm(
+      'service_cqftwza',
+      'template_x7oz459',
+      formRef.current,
+      'aF4r3dZwQptZC6Q0p'
+    )
       .then((result) => {
         console.log(result.text);
         alert('Message sent successfully!');
@@ -24,7 +36,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-4">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
       <div className="mb-4">
         <label className="block text-gray-700 font-bold">Name</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"/>
