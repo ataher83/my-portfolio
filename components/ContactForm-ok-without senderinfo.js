@@ -1,11 +1,9 @@
 import React, { useState, useRef } from 'react';
 import emailjs from 'emailjs-com';
-import { SnackbarProvider, useSnackbar } from 'notistack';
 
 const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
   const formRef = useRef();
-  const { enqueueSnackbar } = useSnackbar();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -15,6 +13,13 @@ const ContactForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    // emailjs.sendForm(
+    //   SERVICE_ID,
+    //   TEMPLATE_ID,
+    //   formRef.current,
+    //   PUBLIC_KEY
+    // )
+    
     emailjs.sendForm(
       'service_cqftwza',
       'template_x7oz459',
@@ -23,10 +28,10 @@ const ContactForm = () => {
     )
       .then((result) => {
         console.log(result.text);
-        enqueueSnackbar('Message sent successfully!', { variant: 'success' });
+        alert('Message sent successfully!');
       }, (error) => {
         console.log(error.text);
-        enqueueSnackbar('Failed to send message.', { variant: 'error' });
+        alert('Failed to send message.');
       });
   };
 
@@ -49,12 +54,4 @@ const ContactForm = () => {
   );
 };
 
-const App = () => {
-  return (
-    <SnackbarProvider maxSnack={3}>
-      <ContactForm />
-    </SnackbarProvider>
-  );
-};
-
-export default App;
+export default ContactForm;
