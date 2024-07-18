@@ -134,8 +134,13 @@ export default function Home() {
           <div>
             <p>Email: <a href="mailto:taher83@gmail.com" className="text-blue-500 underline">taher83@gmail.com</a></p>
             <p>Cell: 01749117640</p>
-            <p>LinkedIn: <a href="https://www.linkedin.com/in/abutahershahin/" className="text-blue-500 underline">Your LinkedIn Profile</a></p>
-            <p>GitHub: <a href="https://github.com/ataher83" className="text-blue-500 underline">Your GitHub Profile</a></p>
+            {/* <p>LinkedIn: <a href="https://www.linkedin.com/in/abutahershahin/" className="text-blue-500 underline">LinkedIn Profile Link</a></p>
+            <p>GitHub: <a href="https://github.com/ataher83" className="text-blue-500 underline">GitHub Profile Link</a></p>
+             */}
+
+              <p><a href="https://www.linkedin.com/in/abutahershahin/" className="text-blue-500 underline">LinkedIn</a></p>
+              <p><a href="https://github.com/ataher83" className="text-blue-500 underline">GitHub</a></p>
+
           </div>
           <ContactForm />
         </section>
