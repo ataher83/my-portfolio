@@ -4,9 +4,16 @@ import Footer from '../components/Footer';
 import ContactForm from '../components/ContactForm';
 import Image from 'next/image';
 
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
+
+
+
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen bg-gradient-to-br from-gray-200 to-gray-300">
+      
+
       <Head>
         <title>Abu Taher Md. Shahin - Portfolio</title>
         <meta name="description" content="Abu Taher Md. Shahin's portfolio website" />
@@ -44,7 +51,6 @@ export default function Home() {
           <a 
             href="https://drive.google.com/file/d/1JLG1qXF6pWI22vNHynLRc_tERa44A1L9/view" 
             download 
-            target="_blank"
             className="text-blue-500 underline"
           >
             Download Resume
@@ -89,9 +95,9 @@ export default function Home() {
               <li>Secure and Efficient: Separate registration forms for Employees/HR Managers with subscription packages; ensure secure Stripe payments.</li>
             </ul>
             <p>Technologies Used: HTML, TailwindCSS, JavaScript, React, Vite, npm, Node.js, Express.js, Firebase, MongoDB, Stripe, Vercel</p>
-            <a href="https://asset-manager-54e54.web.app/" target="_blank" className="text-blue-500 underline">Live Site</a>
-            <a href="https://github.com/ataher83/asset-manager-server" target="_blank" className="text-blue-500 underline ml-2">GitHub Server</a>
-            <a href="https://github.com/ataher83/asset-manager-client" target="_blank" className="text-blue-500 underline ml-2">GitHub Client</a>
+            <a href="https://asset-manager-54e54.web.app/" className="text-blue-500 underline">Live Site</a>
+            <a href="https://github.com/ataher83/asset-manager-server" className="text-blue-500 underline ml-2">GitHub Server</a>
+            <a href="https://github.com/ataher83/asset-manager-client" className="text-blue-500 underline ml-2">GitHub Client</a>
           </div>
           <div>
             <h3 className="text-2xl font-semibold">The Alt Products (Alternative Product Searching Website)</h3>
@@ -102,9 +108,9 @@ export default function Home() {
               <li>Customized Sorting: Sort queries and recommendations to tailor your search experience efficiently.</li>
             </ul>
             <p>Technologies Used: HTML, CSS, Tailwind, Daisy UI, JavaScript, React, Vite, npm, Node.js, Express.js, Firebase, MongoDB</p>
-            <a href="https://the-alt-products.web.app/" target="_blank" className="text-blue-500 underline">Live Site</a>
-            <a href="https://github.com/ataher83/alt-products-server" target="_blank" className="text-blue-500 underline ml-2">GitHub Server</a>
-            <a href="https://github.com/ataher83/alt-products-client" target="_blank" className="text-blue-500 underline ml-2">GitHub Client</a>
+            <a href="https://the-alt-products.web.app/" className="text-blue-500 underline">Live Site</a>
+            <a href="https://github.com/ataher83/alt-products-server" className="text-blue-500 underline ml-2">GitHub Server</a>
+            <a href="https://github.com/ataher83/alt-products-client" className="text-blue-500 underline ml-2">GitHub Client</a>
           </div>
           <div>
             <h3 className="text-2xl font-semibold">The Art Gallery (Art & Craft Store Website)</h3>
@@ -115,9 +121,9 @@ export default function Home() {
               <li>Privacy Control: Your craft items are securely stored, visible only to you and the admin.</li>
             </ul>
             <p>Technologies Used: HTML, CSS, Tailwind, Mamba UI, JavaScript, React, Vite, npm, Node.js, Express.js, Firebase, MongoDB</p>
-            <a href="https://the-art-gallery-74571.web.app/" target="_blank" className="text-blue-500 underline">Live Site</a>
-            <a href="https://github.com/ataher83/art-gallery-server" target="_blank" className="text-blue-500 underline ml-2">GitHub Server</a>
-            <a href="https://github.com/ataher83/art-gallery-client" target="_blank" className="text-blue-500 underline ml-2">GitHub Client</a>
+            <a href="https://the-art-gallery-74571.web.app/" className="text-blue-500 underline">Live Site</a>
+            <a href="https://github.com/ataher83/art-gallery-server" className="text-blue-500 underline ml-2">GitHub Server</a>
+            <a href="https://github.com/ataher83/art-gallery-client" className="text-blue-500 underline ml-2">GitHub Client</a>
           </div>
         </section>
 
@@ -140,26 +146,16 @@ export default function Home() {
 
 
             <div className="flex space-x-4">
-              <a href="https://www.linkedin.com/in/abutahershahin/" target="_blank" rel="noopener noreferrer">
-                <Image 
-                  src="/images/linkedin.svg" 
-                  alt="LinkedIn" 
-                  width={28} 
-                  height={28} 
-                />
+              <a href="https://www.linkedin.com/in/abutahershahin/" className="text-blue-500">
+                <FontAwesomeIcon icon={faLinkedin} size="2x" />
               </a>
-              <a href="https://github.com/ataher83" target="_blank" rel="noopener noreferrer">
-                <Image 
-                  src="/images/github.svg" 
-                  alt="GitHub" 
-                  width={24} 
-                  height={24} 
-                />
+              <a href="https://github.com/ataher83" className="text-blue-500">
+                <FontAwesomeIcon icon={faGithub} size="2x" />
               </a>
             </div>
 
 
-
+            
           </div>
           <ContactForm />
         </section>
@@ -167,7 +163,7 @@ export default function Home() {
 
 
 
-
+        
       </main>
 
       <Footer />

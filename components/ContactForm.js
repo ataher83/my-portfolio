@@ -31,7 +31,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4">
+    <form ref={formRef} onSubmit={handleSubmit} className="space-y-4 mt-5">
       <div className="mb-4">
         <label className="block text-gray-700 font-bold">Name</label>
         <input type="text" name="name" value={formData.name} onChange={handleChange} className="w-full border border-gray-300 p-2 rounded focus:outline-none focus:ring-2 focus:ring-indigo-400"/>
